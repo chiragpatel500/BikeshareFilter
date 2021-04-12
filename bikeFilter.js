@@ -1,4 +1,6 @@
-bikeFilter()
+function bikeFilter()
 {
 
 };
+
+console.log(bikeFilter);

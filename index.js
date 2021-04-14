@@ -1,15 +1,16 @@
-function myFunction() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Show more";
-    moreText.style.display = "none";
+function showHide(event) {
+  let moreText = document.getElementById("moreText");
+  let buttonID = event.target.id;
+  if (!moreText.classList.contains("show")) {
+    moreText.classList.add("show");
+    document.getElementById(buttonID).innerHTML = "Show Less";
   } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Show less";
-    moreText.style.display = "inline";
+    moreText.classList.remove("show");
+    document.getElementById(buttonID).innerHTML = "Show More";
   }
 }
+
+let button = document.getElementById("showMoreButton");
+button.addEventListener("click", function (event) {
+  showHide(event);
+});

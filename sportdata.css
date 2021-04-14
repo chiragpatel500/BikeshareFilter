@@ -1,13 +1,17 @@
+.dropcheck{
+    display:grid;
+   justify-content: center;
+}
 table,th,td {
     border: 1px solid black;
     border-collapse: collapse;
 }
 /* Dropdown Button */
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: cornflowerblue;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 12px;
     border: none;
     cursor: pointer;
 }
@@ -15,7 +19,7 @@ table,th,td {
 /* Dropdown button on hover & focus */
 .dropbtn:hover,
 .dropbtn:focus {
-    background-color: #3e8e41;
+    background-color:red;
 }
 
 /* The search field */

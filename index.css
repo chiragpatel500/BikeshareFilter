@@ -1,13 +1,10 @@
-.more {
-    display: none;
-}
-
-
-.maincontent{
-    margin-bottom: 10px;
-}
-
 .img-fluid {
     width: 100%;
     height: auto;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block;
 }

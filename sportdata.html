@@ -36,9 +36,17 @@
   </div>
 </nav>
 
-<aside></aside>
+<div class="dropcheck">
+  <div class="row">
+    <div class="col-sm-12 col-lg-3">
+  <input type="checkbox" id="sporttype" name="sport" value="sport">
+<label for="sport1">TeamSport</label><br>
+<input type="checkbox" id="eventype" name="event" value="event">
+<label for="event1">EventSport</label><br>
+</div>
+  <div class="col-sm-12 col-lg-3">
  <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <button onclick="myFunction()" class="dropbtn"> Sports Choice</button>
   <div id="myDropdown" class="dropdown-content">
     <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
     <a href="#about">About</a>
@@ -49,20 +57,16 @@
     <a href="#support">Support</a>
     <a href="#tools">Tools</a>
   </div>
-
-  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-<label for="vehicle1"> I have a bike</label><br>
-<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-<label for="vehicle2"> I have a car</label><br>
-<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-<label for="vehicle3"> I have a boat</label><br>
 </div>
-</aside>
+</div>
+</div>
+</div>
+
 <table style="width:100%">
   <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
+    <th>Sports Name</th>
+    <th>Event type</th>
+    <th>Image</th>
   </tr>
   <tr>
     <td>Jill</td>

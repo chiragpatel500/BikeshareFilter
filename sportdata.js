@@ -19,3 +19,9 @@ function filterFunction() {
     }
   }
 }
+
+
+
+
+
+console.log(sports[0].strFormat);

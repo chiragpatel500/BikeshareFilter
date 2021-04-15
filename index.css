@@ -1,13 +1,31 @@
-.img-fluid {
-    width: 100%;
-    height: auto;
+.sportimg{
+    height: 90vh;
+    width: 90vw;
+}
+/* Container holding the image and the text */
+.container {
+    position: relative;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Bottom right text */
+.text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color:transparent;
+    color:black;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .hide {
     display: none;
 }
 .show {
     display: block;
-}
+} 
+
 .navbar-dark .navbar-brand {
     color: skyblue;
 }
@@ -42,5 +60,5 @@ footer a:first-child {
 }
 
 footer a:hover {
-    color: rgb(19, 17, 17);
+    color: white;
 }

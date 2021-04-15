@@ -1,3 +1,13 @@
+footer {
+    background: black;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: [footer-height];
+}
 .dropcheck{
     display:grid;
    justify-content: center;

@@ -1,6 +1,6 @@
 .sportimg{
-    height: 90vh;
-    width: 90vw;
+    height: 85vh;
+    width: 100vw;
 }
 /* Container holding the image and the text */
 .container {
@@ -11,8 +11,8 @@
 
 /* Bottom right text */
 .text-block {
-    position: absolute;
-    bottom: 20px;
+    position: fixed;
+    bottom: 80px;
     right: 20px;
     background-color:transparent;
     color:black;

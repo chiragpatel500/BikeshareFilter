@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Sport Choice filter</title>
+    <title>sportlist</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -19,7 +19,6 @@
     />
     <link rel="stylesheet" href="index.Css" />
     <link rel="stylesheet" href="sportdata.Css" />
-    
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -43,7 +42,7 @@
                 >Home</a
               >
             </li>
-             <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" href="about.html">about us</a>
             </li>
             <li class="nav-item">
@@ -54,10 +53,33 @@
       </div>
     </nav>
 
-   
-<div id="my-list">
-
-
+    <ul class="dropcheck">
+      <div class="row">
+        <div class="col-sm-3 col-lg-4">
+          <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+          <label for="vehicle1"> I have a bike</label><br />
+          <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+          <label for="vehicle2"> I have a car</label><br />
+        </div>
+        <div class="col-sm-3 col-lg-4">
+          <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3 col-lg-4">
+          <input type="submit" value="Submit" />
+        </div>
+      </div>
+    </ul>
+    <p id="success"></p>
+    <p id="error"></p>
+    <p id="loading">Loading...</p>
+    <ul id="list"></ul>
 
     <footer>
       <a href="#"><i class="fa fa-facebook"></i></a>
@@ -71,9 +93,8 @@
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
       crossorigin="anonymous"
     ></script>
-  
-    
-    
+
+    <script src="sportdata.js"></script>
   </body>
 </html>
 

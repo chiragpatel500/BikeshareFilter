@@ -1,12 +1,12 @@
+body{
+background-color: blanchedalmond;
+}
 .dropcheck{
-    background-color: blanchedalmond;
+    background-color: rgb(219, 139, 139);
     display: flex;
     justify-content: center;
    text-align: left;
 }
-
-
-
 .dropbtn {
     background-color: #4CAF50;
     color: white;

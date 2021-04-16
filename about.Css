@@ -38,8 +38,8 @@ footer {
 .about-section {
     padding: 50px;
     text-align: center;
-    background-color: #474e5d;
-    color: white;
+    background-color:blanchedalmond;
+    color:black;
 }
 
 .container {
@@ -54,7 +54,7 @@ footer {
 }
 
 .title {
-    color: grey;
+    color: rgb(228, 39, 39);
 }
 
 .button {
@@ -70,7 +70,7 @@ footer {
 }
 
 .button:hover {
-    background-color: #555;
+    background-color: rgb(64, 155, 52);
 }
 
 @media screen and (max-width: 650px) {

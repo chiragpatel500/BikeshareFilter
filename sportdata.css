@@ -1,5 +1,8 @@
 .dropcheck{
     background-color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+   text-align: left;
 }
 
 

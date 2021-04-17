@@ -1,11 +1,11 @@
 const fetchMyData = () => {
-  fetch("https://www.thesportsdb.com/api/v1/json/1/all_sports.php")
+  fetch("https://cab-cors-anywhere.herokuapp.com/https://www.thesportsdb.com/api/v1/json/1/all_sports.php")
     .then((response) => {
       return response.json();
     })
-    .then((sportdata) => {
+    .then((data) => {
       document.getElementById("loading").style.display = "none";
-      displayData(sportdata);
+      displayData(data);
     })
     .catch((err) => {
       showError(err);
@@ -19,11 +19,11 @@ const showError = (err) => {
   document.getElementById("error").innerHTML = err;
 };
 
-const displayData = (sportdata) => {
+const displayData = (data) => {
   const ul = document.getElementById("list");
-  sportdata.forEach((all_sports) => {
+  data.forEach((post) => {
     const li = document.createElement("li");
-    li.innerHTML = all_sports.title;
+    li.innerHTML = post.all_sports;
     ul.appendChild(li);
   });
 };

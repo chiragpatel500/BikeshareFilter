@@ -1,6 +1,9 @@
+body{
+    background-color: blanchedalmond;
+}
 .sportimg{
     height: 85vh;
-    width: 95vw;
+    width: 100vw;
 }
 /* Container holding the image and the text */
 .container {

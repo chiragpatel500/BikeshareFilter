@@ -2,7 +2,7 @@ body{
     background-color: blanchedalmond;
 }
 .sportimg{
-    height: 85vh;
+    height: auto;
     width: 100vw;
 }
 /* Container holding the image and the text */

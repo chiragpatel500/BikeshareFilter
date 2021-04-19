@@ -59,18 +59,13 @@
           <input type="checkbox" id="teamsport" name="vehicle1" value="Bike" />
           <label for="teamsport"> TeamSport</label><br />
           <input type="checkbox" id="solosport" name="vehicle2" value="Car" />
-          <label for="solosport"> SoloSport</label><br />
+          <label for="eventsport"> eventSport</label><br />
         </div>
         <div class="col-sm-12 col-lg-6">
-          <div class="dropdown">
-            <h6>SportsName</h6>
-            <button class="dropbtn">SportsName</button>
-            <div class="dropdown-content">
-              <a href="#">basketball</a>
-              <a href="#">soccer</a>
-              <a href="#">cricket</a>
-            </div>
-          </div>
+           <label for="selectdrop">Choose a sport</label>
+  <select name="dropdown" id="selectdrop">
+    <option value="all" id="alldrop">All sports</option>
+  </select>
         </div>
       </div>
     </div>
@@ -79,6 +74,17 @@
     <p id="error"></p>
     <p id="loading">Loading...</p>
     <ul id="list"></ul>
+
+    <table class="table table-dark">
+  <thead>
+      <th>Sport</th>
+      <th>Format</th>
+      <th>Image</th>
+      <th>Description</th>  
+  </thead>
+  <tbody id = "tablebody">
+  </tbody>
+</table>
 
     <footer>
       <a href="#"><i class="fa fa-facebook"></i></a>

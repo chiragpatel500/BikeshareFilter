@@ -33,8 +33,8 @@ const fetchMyData = () => {
       // calling the displayData to perform inside the block.
       console.log(all_Sports.sports);
       displayData(all_Sports.sports);
-      // createSelectOptions(all_Sports.sports);
-      // addEvents(all_Sports.sports);
+      createSelectOptions(all_Sports.sports);
+      addEvents(all_Sports.sports);
     })
     // step 3: display error message if any prbloem in step 1 for extracting the data from api.
     // cathing any error coming from the data or url.
@@ -74,7 +74,7 @@ const displayData = (sports) => {
   // selecting the elemnet from html page
   const tabData = document.getElementById("tablebody");
 
-  // tableBody.innerHTML = "";
+  tablebody.innerHTML = "";
   // looping through the sports array.
   sports.forEach((sport) => {
     // creating a new element inside the html page
@@ -99,64 +99,104 @@ const displayData = (sports) => {
 };
 
 
+// STEP 1: adding event listners to the checboxes and dropdown.
 
-
+// Creating the events For checkbox and Select dropdown and saving it to a variable called add events.
 const addEvents = (sports) => {
+  // selecting check boxes with input type checkbox.
   let checkboxes = Array.from(
     document.querySelectorAll("input[type=checkbox]")
   );
-
+// looping through the array of data 
   checkboxes.forEach((checkbox) => {
+    // adding event listener to the check boxes
     checkbox.addEventListener("change", () => {
-      filterData(sports);
+      // calling filter function run inside the change event
+      filterData(sports.strFormat);
     });
   });
+  //  selecting the dropdown and adding the eventlistener to it.
   document.getElementById("selectDrop").addEventListener("change", () => {
-    filterData(sports);
+    // calling filter function to run inside the chnage event.
+    filterData(sports.strSport);
   });
 };
 
+// step 2: creating the option in select dropdown dynamically.
+
+// creating the select options adding the values to it dynamically.
 const createSelectOptions = (sports) => {
-  let sportsNames = sports.map((sport) => {
-    return sport.strSport;
+  let sportNames = sports.map((sports) => {
+    return sports.strSport;
   });
-  console.log(sportsNames);
+  console.log(sportNames);
+  // creating a new arrayay to remove duplicates.
+  let cleanedSportNames = [];
+  // looping through the array to remove the duplicates
+  sportNames.forEach((strSport,index) => {
+    // using indexOf method to remove duplicates.
+    if (sportNames.indexOf(strSport) === index) (sportNames.push(strSport))
+    {
+      // pushing the result to an array.
+      cleanedSportNames.push(strSport);
+    }
+  });
+  console.log(cleanedSportNames);
+
+  // selecting the select dropdown and assiging an cleaned array value to it as well as changing the atribute. 
   let select = document.getElementById("selectDrop");
-  sportNames.forEach((sport) => {
+  cleanedSportNames.forEach((strSport) => {
+    // creating a new element and rendering it dynamically.
     let option = document.createElement("option");
-    option.innerHTML = sport;
-    option.setAttribute("value", sport);
+    option.innerHTML = strSport;
+    option.setAttribute("value", strSport);
     select.appendChild(option);
   });
 };
 
-const filterData = () => {
+
+// writing the filter function with actually filters the 
+const filterData = (sports) => {
   let checkboxes = Array.from(
+  // selecting the checkboxes and  mapping through entire object to revice the  checked value.
     document.querySelectorAll("input[type=checkbox]:checked")
+    // mapping through the chechboxes
   ).map((checkbox) => {
     return checkbox.value;
   });
+
+  // slecting the dropdwn and it's value.
   let selectElm = document.getElementById("selectDrop").value;
   console.log(selectElm);
   console.log(checkboxes);
 
-  if (selectElm !== "all" || checkboxes.length !== 0) {
-    console.log("here");
+  // 1 Conditition : if nothing slected than display all
+  if (selectElm !== "All" || checkboxes.length !== 0) {
+    // console.log("here");
   }
+
+  //  2 condition :if no checkbox selected than display all and if selcted than display that pariculatar.  
   let filteredData = [];
   if (checkboxes.length === 0) {
     displayData(sports);
   } else {
-    sports.forEach((sport) => {
-      if (checkboxes.includes(sport.strFormat)) {
-        filteredData.push(sport);
+    sports.forEach((sports) => {
+      if (checkboxes.includes(sports.strSport)) {
+        filteredData.push(sports.strSport);
       }
     });
     displayData(filteredData);
   }
+
 };
 
 
+let finalCheck = document.querySelectorAll("input[type=checkbox]:checked");
+let finalDrop = document.getElementById("selectDrop").value;
+let multiSelect = [];
+const finalFilter = (sports) = {
 
-
-
+  // both select and checkboxes are selected
+ 
+  
+};

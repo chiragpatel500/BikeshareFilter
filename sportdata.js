@@ -33,6 +33,8 @@ const fetchMyData = () => {
       // calling the displayData to perform inside the block.
       console.log(all_Sports.sports);
       displayData(all_Sports.sports);
+      // createSelectOptions(all_Sports.sports);
+      // addEvents(all_Sports.sports);
     })
     // step 3: display error message if any prbloem in step 1 for extracting the data from api.
     // cathing any error coming from the data or url.
@@ -71,6 +73,8 @@ const showError = (err) => {
 const displayData = (sports) => {
   // selecting the elemnet from html page
   const tabData = document.getElementById("tablebody");
+
+  // tableBody.innerHTML = "";
   // looping through the sports array.
   sports.forEach((sport) => {
     // creating a new element inside the html page
@@ -92,7 +96,65 @@ const displayData = (sports) => {
     
     tabData.appendChild(tabTr);
   });
-}; 
+};
+
+
+
+
+const addEvents = (sports) => {
+  let checkboxes = Array.from(
+    document.querySelectorAll("input[type=checkbox]")
+  );
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      filterData(sports);
+    });
+  });
+  document.getElementById("selectDrop").addEventListener("change", () => {
+    filterData(sports);
+  });
+};
+
+const createSelectOptions = (sports) => {
+  let sportsNames = sports.map((sport) => {
+    return sport.strSport;
+  });
+  console.log(sportsNames);
+  let select = document.getElementById("selectDrop");
+  sportNames.forEach((sport) => {
+    let option = document.createElement("option");
+    option.innerHTML = sport;
+    option.setAttribute("value", sport);
+    select.appendChild(option);
+  });
+};
+
+const filterData = () => {
+  let checkboxes = Array.from(
+    document.querySelectorAll("input[type=checkbox]:checked")
+  ).map((checkbox) => {
+    return checkbox.value;
+  });
+  let selectElm = document.getElementById("selectDrop").value;
+  console.log(selectElm);
+  console.log(checkboxes);
+
+  if (selectElm !== "all" || checkboxes.length !== 0) {
+    console.log("here");
+  }
+  let filteredData = [];
+  if (checkboxes.length === 0) {
+    displayData(sports);
+  } else {
+    sports.forEach((sport) => {
+      if (checkboxes.includes(sport.strFormat)) {
+        filteredData.push(sport);
+      }
+    });
+    displayData(filteredData);
+  }
+};
 
 
 

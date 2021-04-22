@@ -75,14 +75,14 @@ const displayData = (sports) => {
   const tabData = document.getElementById("tablebody");
 
   tablebody.innerHTML = "";
-  // looping through the sports array.
-
+  
+// show more show less.
   let splittedDescription = sports[0].strSportDescription.split(".")
   let shortText = splittedDescription[0]
   splittedDescription.shift()
   let longText = splittedDescription.join('')
 
-
+// looping through the sports array.
   sports.forEach((sport) => {
     // creating a new element inside the html page
     const tabTr = document.createElement("tr");
@@ -213,12 +213,3 @@ const filterData = (sports) => {
 };
 
 
-// let finalCheck = document.querySelectorAll("input[type=checkbox]:checked");
-// let finalDrop = document.getElementById("selectDrop").value;
-// let multiSelect = [];
-// const finalFilter = (sports) = {
-    // if(finalcheck )
-//   // both select and checkboxes are selected
- 
-  
-// };

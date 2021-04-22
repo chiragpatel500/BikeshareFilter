@@ -191,12 +191,12 @@ const filterData = (sports) => {
 };
 
 
-let finalCheck = document.querySelectorAll("input[type=checkbox]:checked");
-let finalDrop = document.getElementById("selectDrop").value;
-let multiSelect = [];
-const finalFilter = (sports) = {
-
-  // both select and checkboxes are selected
+// let finalCheck = document.querySelectorAll("input[type=checkbox]:checked");
+// let finalDrop = document.getElementById("selectDrop").value;
+// let multiSelect = [];
+// const finalFilter = (sports) = {
+    // if(finalcheck )
+//   // both select and checkboxes are selected
  
   
-};
+// };

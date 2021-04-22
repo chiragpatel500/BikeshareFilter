@@ -56,9 +56,9 @@
       <div class="row">
         <div class="col-sm-12 col-lg-6">
           <h6>SportsFormat<h6>
-          <input type="checkbox" id="teamsport" name="team" value="TeamSport" />
+          <input type="checkbox" id="teamsport" name="team" value="TeamvsTeam" />
           <label for="teamsport"> TeamSport</label><br />
-          <input type="checkbox" id="solosport" name="solo" value="eventSport" />
+          <input type="checkbox" id="solosport" name="solo" value="EventSport" />
           <label for="eventsport"> eventSport</label><br />
         </div>
         <div class="col-sm-12 col-lg-6">
@@ -74,17 +74,21 @@
     <p id="error"></p>
     <p id="loading">Loading...</p>
     <ul id="list"></ul>
+    <div class="table-responsive-sm">
+      <table class="table table-dark">
+        <thead>
+            <th>Sport</th>
+            <th>Format</th>
+            <th>Image</th>
+            <th>Description</th>  
+        </thead>
+        <tbody id = "tablebody">
+        </tbody>
+      </table>
+    </div>
 
-    <table class="table table-dark">
-  <thead>
-      <th>Sport</th>
-      <th>Format</th>
-      <th>Image</th>
-      <th>Description</th>  
-  </thead>
-  <tbody id = "tablebody">
-  </tbody>
-</table>
+     
+    
 
     <footer>
       <a href="#"><i class="fa fa-facebook"></i></a>

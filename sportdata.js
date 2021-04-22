@@ -76,6 +76,13 @@ const displayData = (sports) => {
 
   tablebody.innerHTML = "";
   // looping through the sports array.
+
+  let splittedDescription = sports[0].strSportDescription.split(".")
+  let shortText = splittedDescription[0]
+  splittedDescription.shift()
+  let longText = splittedDescription.join('')
+
+
   sports.forEach((sport) => {
     // creating a new element inside the html page
     const tabTr = document.createElement("tr");
@@ -83,7 +90,7 @@ const displayData = (sports) => {
     const tabtd2 = document.createElement("td");
     const tabtd3 = document.createElement("td");
     const tabtd4 = document.createElement("td");
-
+     
     tabtd1.innerHTML = sport.strSport;
     tabtd2.innerHTML = sport.strFormat;
     tabtd3.innerHTML = sport.strSportThumb;
@@ -112,13 +119,13 @@ const addEvents = (sports) => {
     // adding event listener to the check boxes
     checkbox.addEventListener("change", () => {
       // calling filter function run inside the change event
-      filterData(sports.strFormat);
+      filterData(sports);
     });
   });
   //  selecting the dropdown and adding the eventlistener to it.
   document.getElementById("selectDrop").addEventListener("change", () => {
     // calling filter function to run inside the chnage event.
-    filterData(sports.strSport);
+    filterData(sports);
   });
 };
 
@@ -157,6 +164,7 @@ const createSelectOptions = (sports) => {
 
 // writing the filter function with actually filters the 
 const filterData = (sports) => {
+  console.log(sports)
   let checkboxes = Array.from(
   // selecting the checkboxes and  mapping through entire object to revice the  checked value.
     document.querySelectorAll("input[type=checkbox]:checked")
@@ -169,24 +177,38 @@ const filterData = (sports) => {
   let selectElm = document.getElementById("selectDrop").value;
   console.log(selectElm);
   console.log(checkboxes);
-
+  let filteredData = [];  
   // 1 Conditition : if nothing slected than display all
-  if (selectElm !== "All" || checkboxes.length !== 0) {
+  if (selectElm === "all" && checkboxes.length === 0) {
+    filteredData = sports
     // console.log("here");
-  }
-
-  //  2 condition :if no checkbox selected than display all and if selcted than display that pariculatar.  
-  let filteredData = [];
-  if (checkboxes.length === 0) {
-    displayData(sports);
-  } else {
-    sports.forEach((sports) => {
-      if (checkboxes.includes(sports.strSport)) {
-        filteredData.push(sports.strSport);
+  } else if (selectElm === "all" && checkboxes.length !== 0) {
+     sports.forEach((sport) => {
+      
+      if (checkboxes.includes(sport.strFormat)) {
+        filteredData.push(sport);
       }
     });
-    displayData(filteredData);
+  } else if (selectElm !== "all" && checkboxes.length === 0) {
+    sports.forEach((sport) => {
+      
+      if (selectElm === sport.strSport) {
+        filteredData.push(sport);
+      }
+    });
+  } else {
+    sports.forEach((sport) => {
+      
+      if (selectElm === sport.strSport && checkboxes.includes(sport.strFormat)) {
+        filteredData.push(sport);
+      }
+    });
   }
+  displayData(filteredData)
+
+  //  2 condition :if no checkbox selected than display all and if selcted than display that pariculatar.  
+  
+  
 
 };
 

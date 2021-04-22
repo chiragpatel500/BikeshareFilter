@@ -3,7 +3,8 @@ body{
 }
 .sportimg{
     height: auto;
-    width: 98vw;
+    width: 100%;
+    
 }
 /* Container holding the image and the text */
 .container {
@@ -17,7 +18,7 @@ body{
 .text-block {
     position: fixed;
     bottom: 80px;
-    right: 20px;
+    left: 20px;
     background-color:transparent;
     color:black;
     padding-left: 20px;

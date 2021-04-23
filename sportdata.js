@@ -130,7 +130,6 @@ const addEvents = (sports) => {
 };
 
 // step 2: creating the option in select dropdown dynamically.
-
 // creating the select options adding the values to it dynamically.
 const createSelectOptions = (sports) => {
   let sportNames = sports.map((sports) => {
@@ -162,7 +161,7 @@ const createSelectOptions = (sports) => {
 };
 
 
-// writing the filter function with actually filters the 
+// writing the filter function with actually filters the data.
 const filterData = (sports) => {
   console.log(sports)
   let checkboxes = Array.from(
@@ -173,7 +172,7 @@ const filterData = (sports) => {
     return checkbox.value;
   });
 
-  // slecting the dropdwn and it's value.
+  // slecting the dropdown and it's value.
   let selectElm = document.getElementById("selectDrop").value;
   console.log(selectElm);
   console.log(checkboxes);
@@ -181,23 +180,23 @@ const filterData = (sports) => {
   // 1 Conditition : if nothing slected than display all
   if (selectElm === "all" && checkboxes.length === 0) {
     filteredData = sports
+    // 2 condition : if only checkbox is selected than only display data from checkdown.
   } else if (selectElm === "all" && checkboxes.length !== 0) {
      sports.forEach((sport) => {
-      
       if (checkboxes.includes(sport.strFormat)) {
         filteredData.push(sport);
       }
-    });
+     });
+    // 3 condition : if only dropdown is selected than only display data from the Dropdown. 
   } else if (selectElm !== "all" && checkboxes.length === 0) {
     sports.forEach((sport) => {
-      
       if (selectElm === sport.strSport) {
         filteredData.push(sport);
       }
     });
+    // 4 condition: if both are selected than display data from all.  
   } else {
-    sports.forEach((sport) => {
-      
+    sports.forEach((sport) => {      
       if (selectElm === sport.strSport && checkboxes.includes(sport.strFormat)) {
         filteredData.push(sport);
       }

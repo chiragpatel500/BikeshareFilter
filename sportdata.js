@@ -76,7 +76,7 @@ const displayData = (sports) => {
 
   tablebody.innerHTML = "";
   
-// show more show less.
+// show more show less text for the description.
   let splittedDescription = sports[0].strSportDescription.split(".")
   let shortText = splittedDescription[0]
   splittedDescription.shift()

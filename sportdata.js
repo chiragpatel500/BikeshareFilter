@@ -77,10 +77,10 @@ const displayData = (sports) => {
   tablebody.innerHTML = "";
   
 // show more show less text for the description.
-  let splittedDescription = sports[0].strSportDescription.split(".")
-  let shortText = splittedDescription[0]
-  splittedDescription.shift()
-  let longText = splittedDescription.join('')
+  // let splittedDescription = sports[0].strSportDescription.split(".")
+  // let shortText = splittedDescription[0]
+  // splittedDescription.shift()
+  // let longText = splittedDescription.join('')
 
 // looping through the sports array.
   sports.forEach((sport) => {
@@ -181,7 +181,6 @@ const filterData = (sports) => {
   // 1 Conditition : if nothing slected than display all
   if (selectElm === "all" && checkboxes.length === 0) {
     filteredData = sports
-    // console.log("here");
   } else if (selectElm === "all" && checkboxes.length !== 0) {
      sports.forEach((sport) => {
       
@@ -205,11 +204,4 @@ const filterData = (sports) => {
     });
   }
   displayData(filteredData)
-
-  //  2 condition :if no checkbox selected than display all and if selcted than display that pariculatar.  
-  
-  
-
 };
-
-

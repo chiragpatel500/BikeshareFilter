@@ -91,17 +91,21 @@ const displayData = (sports) => {
     const tabtd3 = document.createElement("td");
     const tabtd4 = document.createElement("td");
   
-    
+  
+
     tabtd1.innerHTML = sport.strSport;
     tabtd2.innerHTML = sport.strFormat;
     tabtd3.innerHTML = sport.strSportThumb;
     tabtd4.innerHTML = sport.strSportDescription;
+ 
+    
+   
 
     tabTr.appendChild(tabtd1);
     tabTr.appendChild(tabtd2);
     tabTr.appendChild(tabtd3);
     tabTr.appendChild(tabtd4);
-    
+   
     tabData.appendChild(tabTr);
   });
 };

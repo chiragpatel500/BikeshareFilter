@@ -1,6 +1,9 @@
 body{
     background-color: blanchedalmond;
 }
+.navbar{
+    overflow: hidden;
+} 
 .sportimg{
     height: auto;
     width: 100%;

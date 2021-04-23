@@ -90,7 +90,8 @@ const displayData = (sports) => {
     const tabtd2 = document.createElement("td");
     const tabtd3 = document.createElement("td");
     const tabtd4 = document.createElement("td");
-     
+  
+    
     tabtd1.innerHTML = sport.strSport;
     tabtd2.innerHTML = sport.strFormat;
     tabtd3.innerHTML = sport.strSportThumb;

@@ -88,10 +88,19 @@ const displayData = (sports) => {
     const tabTr = document.createElement("tr");
     const tabtd1 = document.createElement("td");
     const tabtd2 = document.createElement("td");
-    const tabtd3 = document.createElement("td");
-    const tabtd4 = document.createElement("td");
+    const tabtd3 = document.createElement("image");
+    const tabtd4 = document.createElement("text");
   
+    // let tabtd3 = element.id; // Get the id
+    // element.id = thumbnail; // Set the id
+    
+    // Document.getElementById("thumbnail")
   
+  // show more show less text for the description.
+  // let splittedDescription = sports[0].strSportDescription.split(".")
+  // let shortText = splittedDescription[0]
+  // splittedDescription.shift()
+  // let longText = splittedDescription.join('')
 
     tabtd1.innerHTML = sport.strSport;
     tabtd2.innerHTML = sport.strFormat;
@@ -209,3 +218,8 @@ const filterData = (sports) => {
   }
   displayData(filteredData)
 };
+
+
+// link to img
+// step 1:slect the link tag td.
+// step 2: change the 

@@ -1,19 +1,14 @@
 const fetchMyData = () => {
-  // // Trying using authentication
-  // const url = "https://www.thesportsdb.com/api/v1/json/1/all_sports.php";
-  // fetch(url, {
-  // method: "GET",
-  // headers: {
-  //   "X-Auth-Token": "1",
-  //   "Content-Type": "application/json"
-  // }
-  // })
+ 
 
     // Trying without authentication
   // step 0: make an api call using fetch.
     // make a call to get promise response using the fetch keyword.
   // fetch("https://cab-cors-anywhere.herokuapp.com/https://www.thesportsdb.com/api/v1/json/1/all_sports.php")
-   // step 1: displaying respnse coming from the api  
+
+
+  // Trying with authentication 
+  // step 1: displaying respnse coming from the api
    // using .then to catch the promise response coming from api and wraping it in to a function.  
    const url = "https://cab-cors-anywhere.herokuapp.com/https://www.thesportsdb.com/api/v1/json/1/all_sports.php";
   fetch(url, {
@@ -88,7 +83,7 @@ const displayData = (sports) => {
     const tabTr = document.createElement("tr");
     const tabtd1 = document.createElement("td");
     const tabtd2 = document.createElement("td");
-    const tabtd3 = document.createElement("image");
+    const tabtd3 = document.createElement("img");
     const tabtd4 = document.createElement("text");
   
     // let tabtd3 = element.id; // Get the id

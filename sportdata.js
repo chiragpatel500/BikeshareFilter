@@ -68,14 +68,8 @@ const showError = (err) => {
 const displayData = (sports) => {
   // selecting the elemnet from html page
   const tabData = document.getElementById("tablebody");
-
   tablebody.innerHTML = "";
-  
-// show more show less text for the description.
-  // let splittedDescription = sports[0].strSportDescription.split(".")
-  // let shortText = splittedDescription[0]
-  // splittedDescription.shift()
-  // let longText = splittedDescription.join('')
+
 
 // looping through the sports array.
   sports.forEach((sport) => {
@@ -84,42 +78,45 @@ const displayData = (sports) => {
     const tabtd1 = document.createElement("td");
     const tabtd2 = document.createElement("td");
     const tabtd3 = document.createElement("td");
-  
-    // image tabtd3
+    const tabtd4 = document.createElement("td");
+    
+// making image out of a link.
     let myImg = new Image();
     myImg.src = sport.strSportThumb;
     tabtd3.appendChild(myImg);
 
-    const tabtd4 = document.createElement("td");
-  
-   
-  
-  // show more show less text for the description.
-    
-    let splittedDescription = sport.strSportDescription.split(".")
-    
+// show more show less text for the description. 
+  // splitting the  description  
+    let splittedDescription = sport.strSportDescription.split(".")    
+    // let shortText = splittedDescription
     let shortText = splittedDescription[0]
-    
     splittedDescription.shift()
     console.log(splittedDescription);
-
-  let longText = splittedDescription.join('')
+    let longText = splittedDescription.join('')
     console.log(longText);
+
     tabtd1.innerHTML = sport.strSport;
     tabtd2.innerHTML = sport.strFormat;
     // tabtd3.innerHTML = sport.strSportThumb;
     tabtd4.innerHTML = shortText;
 
+//show more show less
     // creating the <p> tag
     let ptag = document.createElement("p");
-    ptag.style = "display: none";
-    
-    //
+    // assining id to <p> tag
+    ptag.setAttribute("id", "ptagId");
+    // // styling the <p> tag 
+    ptag.style = "display: none";    
+    // creating the <button> tag.
     let btn = document.createElement("button");
-    btn.innerHTML = "showMore";
-
+    // assiging id to <button> tag.
+    btn.setAttribute("id", "btnId");
+    // writing text on the button
+    btn.innerHTML = "show More";
+    // assiging a text <p> tag.
     ptag.innerHTML = longText;
 
+    // adding an event listener to btn <button>tag
     btn.addEventListener("click", function (event) {
       showmorefunc(event)
     })
@@ -128,7 +125,6 @@ const displayData = (sports) => {
     tabtd4.appendChild(ptag);
     tabtd4.appendChild(btn);
  
-    //  give ids to btn and p tag. 
    
     tabTr.appendChild(tabtd1);
     tabTr.appendChild(tabtd2);
@@ -138,16 +134,19 @@ const displayData = (sports) => {
     tabData.appendChild(tabTr);
   });
 };
-let showmorefunc = (event) => {
-  // let moreText = document.getElementById("moreText");
-  // let buttonID = event.target.id;
-  // if (!moreText.classList.contains("show")) {
-  //   moreText.classList.add("show");
-  //   document.getElementById(buttonID).innerHTML = "Show Less";
-  // } else {
-  //   moreText.classList.remove("show");
-  //   document.getElementById(buttonID).innerHTML = "Show More";
-  // }
+
+const showmorefunc = (event) => {
+  let paraId = document.getElementById("ptagId");
+  let btnId= event.target.id;
+  //  if (!paraId.classList.contains("show")) {
+  //   paraId.classList.add("show");
+  //   document.getElementById(btnId).innerHTML = "Show Less";
+// } else
+  {
+    paraId.classList.remove("show");
+    document.getElementById(btnId).innerHTML = "Show More";
+  }
+
 }
 
 // STEP 1: adding event listners to the checboxes and dropdown.

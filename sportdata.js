@@ -72,7 +72,7 @@ const displayData = (sports) => {
 
 
 // looping through the sports array.
-  sports.forEach((sport) => {
+  sports.forEach((sport,index) => {
     // creating a new element inside the html page
     const tabTr = document.createElement("tr");
     const tabtd1 = document.createElement("td");
@@ -104,13 +104,13 @@ const displayData = (sports) => {
     // creating the <p> tag
     let ptag = document.createElement("p");
     // assining id to <p> tag
-    ptag.setAttribute("id", "ptagId");
+    ptag.setAttribute("id", "ptagId-" + index);
     // // styling the <p> tag 
     ptag.style = "display: none";    
     // creating the <button> tag.
     let btn = document.createElement("button");
     // assiging id to <button> tag.
-    btn.setAttribute("id", "btnId");
+    btn.setAttribute("id", "btnId-" + index);
     // writing text on the button
     btn.innerHTML = "show More";
     // assiging a text <p> tag.
@@ -136,18 +136,21 @@ const displayData = (sports) => {
 };
 
 const showmorefunc = (event) => {
-  let paraId = document.getElementById("ptagId");
-  let butnId = document.getElementById("btnId");
+  let btnId = event.target.id;
+  let numberIndex = btnId.split("-")[1];
   
-  if (!paraId.classList.contains("show")) {
-    paraId.classList.add("show");
-    document.getElementById(butnId).innerHTML = "Show Less";
-} else
-  {
-    paraId.classList.remove("show");
-    document.getElementById(butnId).innerHTML = "Show More";
+  let ptag = document.getElementById("ptagId-" + numberIndex);
+  // ptag.style.display = "block";
+  if (ptag.style.display === "block") {
+    ptag.style.display = "none";
+    document.getElementById(btnId).innerHTML = " show More";
+  } else {
+    ptag.style.display = "block";
+    document.getElementById(btnId).innerHTML = " show less";
   }
-}
+  console.log(ptag);
+  console.log(event.target.id);
+};
 
 
 // STEP 1: adding event listners to the checboxes and dropdown.

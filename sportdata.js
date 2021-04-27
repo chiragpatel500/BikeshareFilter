@@ -137,17 +137,18 @@ const displayData = (sports) => {
 
 const showmorefunc = (event) => {
   let paraId = document.getElementById("ptagId");
-  let btnId= event.target.id;
-  //  if (!paraId.classList.contains("show")) {
-  //   paraId.classList.add("show");
-  //   document.getElementById(btnId).innerHTML = "Show Less";
-// } else
+  let butnId = document.getElementById("btnId");
+  
+  if (!paraId.classList.contains("show")) {
+    paraId.classList.add("show");
+    document.getElementById(butnId).innerHTML = "Show Less";
+} else
   {
     paraId.classList.remove("show");
-    document.getElementById(btnId).innerHTML = "Show More";
+    document.getElementById(butnId).innerHTML = "Show More";
   }
-
 }
+
 
 // STEP 1: adding event listners to the checboxes and dropdown.
 

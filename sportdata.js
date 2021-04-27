@@ -83,37 +83,72 @@ const displayData = (sports) => {
     const tabTr = document.createElement("tr");
     const tabtd1 = document.createElement("td");
     const tabtd2 = document.createElement("td");
-    const tabtd3 = document.createElement("img");
-    const tabtd4 = document.createElement("text");
+    const tabtd3 = document.createElement("td");
   
-    // let tabtd3 = element.id; // Get the id
-    // element.id = thumbnail; // Set the id
-    
-    // Document.getElementById("thumbnail")
+    // image tabtd3
+    let myImg = new Image();
+    myImg.src = sport.strSportThumb;
+    tabtd3.appendChild(myImg);
+
+    const tabtd4 = document.createElement("td");
+  
+   
   
   // show more show less text for the description.
-  // let splittedDescription = sports[0].strSportDescription.split(".")
-  // let shortText = splittedDescription[0]
-  // splittedDescription.shift()
-  // let longText = splittedDescription.join('')
+    
+    let splittedDescription = sport.strSportDescription.split(".")
+    
+    let shortText = splittedDescription[0]
+    
+    splittedDescription.shift()
+    console.log(splittedDescription);
 
+  let longText = splittedDescription.join('')
+    console.log(longText);
     tabtd1.innerHTML = sport.strSport;
     tabtd2.innerHTML = sport.strFormat;
-    tabtd3.innerHTML = sport.strSportThumb;
-    tabtd4.innerHTML = sport.strSportDescription;
- 
-    
-   
+    // tabtd3.innerHTML = sport.strSportThumb;
+    tabtd4.innerHTML = shortText;
 
+    // creating the <p> tag
+    let ptag = document.createElement("p");
+    ptag.style = "display: none";
+    
+    //
+    let btn = document.createElement("button");
+    btn.innerHTML = "showMore";
+
+    ptag.innerHTML = longText;
+
+    btn.addEventListener("click", function (event) {
+      showmorefunc(event)
+    })
+    
+
+    tabtd4.appendChild(ptag);
+    tabtd4.appendChild(btn);
+ 
+    //  give ids to btn and p tag. 
+   
     tabTr.appendChild(tabtd1);
     tabTr.appendChild(tabtd2);
     tabTr.appendChild(tabtd3);
     tabTr.appendChild(tabtd4);
-   
+  
     tabData.appendChild(tabTr);
   });
 };
-
+let showmorefunc = (event) => {
+  // let moreText = document.getElementById("moreText");
+  // let buttonID = event.target.id;
+  // if (!moreText.classList.contains("show")) {
+  //   moreText.classList.add("show");
+  //   document.getElementById(buttonID).innerHTML = "Show Less";
+  // } else {
+  //   moreText.classList.remove("show");
+  //   document.getElementById(buttonID).innerHTML = "Show More";
+  // }
+}
 
 // STEP 1: adding event listners to the checboxes and dropdown.
 

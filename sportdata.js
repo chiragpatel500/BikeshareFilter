@@ -149,6 +149,8 @@ const showmorefunc = (event) => {
     document.getElementById(btnId).innerHTML = " show less";
   }
   console.log(ptag);
+
+  // 
   console.log(event.target.id);
 };
 
@@ -253,6 +255,11 @@ const filterData = (sports) => {
 };
 
 
-// link to img
-// step 1:slect the link tag td.
-// step 2: change the 
+// 1 : show more common function
+// 2 :Html to html
+// 3 : media query 
+// need to make another 2nd table for the mobile version media query.
+
+// 1st class desktop table: display :block
+// 2nd class mobile table : display : none 
+// using the media query invert the display property.

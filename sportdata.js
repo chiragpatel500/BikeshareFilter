@@ -48,20 +48,7 @@ const showError = (err) => {
   document.getElementById("error").innerHTML = err;
 };
 
-// displaying data on the html page.
-// const displayData = (sports) => {
-//   // selecting the elemnet from html page
-//   const ul = document.getElementById("list");
-//   // looping through the sports array.
-//   sports.forEach((sport) => {
-//     // creating a new element inside the html page
-//     const li = document.createElement("li");
-//     // assiging a values to the newly created element.
-//     li.innerHTML = sport.strSport;
-//     // appenind newly created elemnt to to an existing element as a child.
-//     ul.appendChild(li);
-//   });
-// };
+
 
 const displayData = (sports) => {
   // selecting the elemnet from html page
